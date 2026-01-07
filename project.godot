@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="JumpPogo"
+run/main_scene="uid://dxyak34grkwnl"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [editor]
