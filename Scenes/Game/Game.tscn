@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhu0kqkf6kjj5"]
+[gd_scene load_steps=6 format=3 uid="uid://bhu0kqkf6kjj5"]
 
 [ext_resource type="Texture2D" uid="uid://dl0507khjt1lv" path="res://Assets/Images/Skybox.hdr" id="1_rdw05"]
+[ext_resource type="PackedScene" uid="uid://bfvfnia8k28e" path="res://Scenes/Platform/Platform.tscn" id="2_gwu2e"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gwu2e"]
 panorama = ExtResource("1_rdw05")
@@ -24,3 +25,5 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="Platform" parent="." instance=ExtResource("2_gwu2e")]
