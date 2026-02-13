@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://nq6rq2ruot4e"]
+
+[ext_resource type="Script" uid="uid://dumj0j4ubuq2n" path="res://Scenes/PlayerCamera/PlayerCamera.gd" id="1_cmyrh"]
+
+[node name="PlayerCamera" type="Camera3D" unique_id=364646915]
+script = ExtResource("1_cmyrh")
+_platformOffset = Vector3(0, 6, 8)
