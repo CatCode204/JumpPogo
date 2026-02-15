@@ -2,6 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dy0ndjq4rxdo1" path="res://Scenes/Player/Player.gd" id="1_s0eop"]
 [ext_resource type="Texture2D" uid="uid://n5nricx2oduh" path="res://Assets/PlayerModel/Textures/colormap.png" id="2_ft8w5"]
+[ext_resource type="AudioStream" uid="uid://bkja5eu11gou3" path="res://Sounds/Land1.wav" id="3_t26db"]
+[ext_resource type="AudioStream" uid="uid://0nxn5ywiq8im" path="res://Sounds/Land2.wav" id="4_fk5o5"]
+[ext_resource type="AudioStream" uid="uid://cn3ivx1gqh857" path="res://Sounds/Land3.wav" id="5_825xp"]
+[ext_resource type="AudioStream" uid="uid://b0odyml5041u4" path="res://Sounds/Land4.wav" id="6_ji083"]
+[ext_resource type="AudioStream" uid="uid://dh6kld380acb7" path="res://Sounds/Land5.wav" id="7_0kmp4"]
+[ext_resource type="AudioStream" uid="uid://c48rrckcrkw6k" path="res://Sounds/LongFall.wav" id="8_fk5o5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l3ax4"]
 radius = 0.5444336
@@ -2708,9 +2714,18 @@ _data = {
 &"wheelchair-sit": SubResource("Animation_kko4t")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_i5acl"]
+streams_count = 5
+stream_0/stream = ExtResource("3_t26db")
+stream_1/stream = ExtResource("4_fk5o5")
+stream_2/stream = ExtResource("5_825xp")
+stream_3/stream = ExtResource("6_ji083")
+stream_4/stream = ExtResource("7_0kmp4")
+
 [node name="Player" type="CharacterBody3D" unique_id=1308101538]
 script = ExtResource("1_s0eop")
 _moveSpeed = 5.0
+_rotationSpeed = 360.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=326963754]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6767578, 0)
@@ -2780,3 +2795,9 @@ skin = SubResource("Skin_u4lxb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1442765608]
 libraries/ = SubResource("AnimationLibrary_bv62g")
+
+[node name="LandSoundEffect" type="AudioStreamPlayer3D" parent="." unique_id=1587428732]
+stream = SubResource("AudioStreamRandomizer_i5acl")
+
+[node name="FallEffect" type="AudioStreamPlayer3D" parent="." unique_id=7011418]
+stream = ExtResource("8_fk5o5")

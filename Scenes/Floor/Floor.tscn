@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cx5ue0jgmfokx"]
+
+[ext_resource type="Script" uid="uid://c1oo4ojdnjgc5" path="res://Scenes/Floor/Floor.gd" id="1_oj8oc"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ln2h6"]
+
+[node name="Floor" type="Area3D" unique_id=1350481348]
+script = ExtResource("1_oj8oc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1119639131]
+shape = SubResource("WorldBoundaryShape3D_ln2h6")

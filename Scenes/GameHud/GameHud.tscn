@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://k707ax8lexgx"]
+
+[ext_resource type="Script" uid="uid://dri04aeeeiccc" path="res://Scenes/GameHud/GameHud.gd" id="1_j1i8v"]
+[ext_resource type="LabelSettings" uid="uid://c50ef7x51rwgm" path="res://Resources/Fonts/LabelFont.tres" id="1_t7gxx"]
+
+[node name="GameHud" type="Control" unique_id=757954289 node_paths=PackedStringArray("_current_high_score_label", "_high_score_label", "_gameOverHud")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j1i8v")
+_current_high_score_label = NodePath("MarginContainer/Label")
+_high_score_label = NodePath("MarginContainer/Label2")
+_gameOverHud = NodePath("ColorRect")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1115562841]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84705883, 0.23137255, 1, 0.5019608)
+
+[node name="GameOverLabel" type="Label" parent="ColorRect" unique_id=180636260]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER!"
+label_settings = ExtResource("1_t7gxx")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=377957504]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1325635942]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "8000"
+label_settings = ExtResource("1_t7gxx")
+
+[node name="Label2" type="Label" parent="MarginContainer" unique_id=467864001]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "BESTSCORE: 8000"
+label_settings = ExtResource("1_t7gxx")

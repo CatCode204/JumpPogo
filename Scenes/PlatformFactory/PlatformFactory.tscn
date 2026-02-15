@@ -1,11 +1,6 @@
 [gd_scene format=3 uid="uid://djvc8vw5a8eih"]
 
 [ext_resource type="Script" uid="uid://cwgl65knkrcjk" path="res://Scenes/PlatformFactory/PlatformFactory.gd" id="1_nidyx"]
-[ext_resource type="PackedScene" uid="uid://trikqguq4cy0" path="res://Scenes/Platform/Platform.tscn" id="2_qu28l"]
 
 [node name="PlatformFactory" type="Node" unique_id=45532556]
 script = ExtResource("1_nidyx")
-
-[node name="Platform" parent="." unique_id=230244744 instance=ExtResource("2_qu28l")]
-
-[connection signal="platform_collide" from="Platform" to="." method="_on_platform_collide"]

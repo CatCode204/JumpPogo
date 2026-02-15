@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cvlkc0mv1dxwp"
+path="res://.godot/imported/Arroz Con Pollo.mp3-be564ac04d03823bbd6619faee232685.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Arroz Con Pollo.mp3"
+dest_files=["res://.godot/imported/Arroz Con Pollo.mp3-be564ac04d03823bbd6619faee232685.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

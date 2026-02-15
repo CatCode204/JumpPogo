@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://c50ef7x51rwgm"]
+
+[ext_resource type="FontFile" uid="uid://cunceiagasuvb" path="res://Assets/Fonts/29 - 27 - Game UI - LuckiestGuy-Regular.ttf" id="1_c68rp"]
+
+[resource]
+font = ExtResource("1_c68rp")
+font_size = 48
+outline_size = 12
+outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)

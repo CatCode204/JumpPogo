@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://bhu0kqkf6kjj5"]
 
 [ext_resource type="Texture2D" uid="uid://dl0507khjt1lv" path="res://Assets/Images/Skybox.hdr" id="1_rdw05"]
+[ext_resource type="Script" uid="uid://nh58dib4i8q7" path="res://Scenes/Game/Game.gd" id="1_y3kpf"]
 [ext_resource type="PackedScene" uid="uid://0wd6lvwjy2t2" path="res://Scenes/Player/Player.tscn" id="3_xbxml"]
 [ext_resource type="PackedScene" uid="uid://nq6rq2ruot4e" path="res://Scenes/PlayerCamera/PlayerCamera.tscn" id="4_ln2h6"]
 [ext_resource type="PackedScene" uid="uid://djvc8vw5a8eih" path="res://Scenes/PlatformFactory/PlatformFactory.tscn" id="4_y3kpf"]
+[ext_resource type="AudioStream" uid="uid://cvlkc0mv1dxwp" path="res://Sounds/Arroz Con Pollo.mp3" id="6_3k6gv"]
+[ext_resource type="PackedScene" uid="uid://cx5ue0jgmfokx" path="res://Scenes/Floor/Floor.tscn" id="6_gvja8"]
+[ext_resource type="PackedScene" uid="uid://k707ax8lexgx" path="res://Scenes/GameHud/GameHud.tscn" id="7_1q8bt"]
+[ext_resource type="Script" uid="uid://chifoxasdh1q2" path="res://Scenes/Game/ReloadGame.gd" id="9_m1o7v"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gwu2e"]
 panorama = ExtResource("1_rdw05")
@@ -18,6 +23,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="Game" type="Node" unique_id=496469974]
+script = ExtResource("1_y3kpf")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=484934185]
 environment = SubResource("Environment_gwu2e")
@@ -26,7 +32,7 @@ environment = SubResource("Environment_gwu2e")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="CharacterBody3D" parent="." unique_id=1308101538 instance=ExtResource("3_xbxml")]
+[node name="Player" parent="." unique_id=1308101538 instance=ExtResource("3_xbxml")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6383333, 0)
 _moveSpeed = 7.0
 
@@ -36,3 +42,19 @@ _platformOffset = Vector3(0, 8, 8)
 _smoothSpeed = 1.0
 
 [node name="PlatformFactory" parent="." unique_id=45532556 instance=ExtResource("4_y3kpf")]
+
+[node name="Floor" parent="." unique_id=1350481348 instance=ExtResource("6_gvja8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -200, 0)
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1286426690]
+stream = ExtResource("6_3k6gv")
+volume_db = -15.0
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=812152765]
+
+[node name="GameHud" parent="CanvasLayer" unique_id=757954289 instance=ExtResource("7_1q8bt")]
+
+[node name="ReloadGame" type="Node" parent="." unique_id=398893700]
+process_mode = 3
+script = ExtResource("9_m1o7v")

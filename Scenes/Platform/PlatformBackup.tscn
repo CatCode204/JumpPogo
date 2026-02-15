@@ -1,6 +1,19 @@
-[gd_scene format=3 uid="uid://trikqguq4cy0"]
+[gd_scene format=3 uid="uid://cos12dqfwow6d"]
 
-[ext_resource type="Script" uid="uid://c045v14s833sl" path="res://Scenes/Platform/Platform.gd" id="1_a2buc"]
+[ext_resource type="Script" uid="uid://c045v14s833sl" path="res://Scenes/Platform/Platform.gd" id="1_pb1q8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i0quw"]
+size = Vector3(2, 0.5, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0quw"]
+albedo_color = Color(0.7607843, 0.15686275, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i0quw"]
+material = SubResource("StandardMaterial3D_i0quw")
+size = Vector3(3, 0.5, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a2buc"]
+size = Vector3(2, 0.6, 2)
 
 [sub_resource type="Animation" id="Animation_a2buc"]
 length = 0.001
@@ -53,18 +66,22 @@ _data = {
 &"vanish": SubResource("Animation_0u71g")
 }
 
-[node name="PlatformBase" type="Node3D" unique_id=230244744]
-script = ExtResource("1_a2buc")
+[node name="PlatformBackup" type="Node3D" unique_id=230244744]
+script = ExtResource("1_pb1q8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1099941186]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1242966746]
+shape = SubResource("BoxShape3D_i0quw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=104760457]
+mesh = SubResource("BoxMesh_i0quw")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1848140815]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1972998642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.046725035, 0)
+shape = SubResource("BoxShape3D_a2buc")
 
 [node name="Timer" type="Timer" parent="." unique_id=1783772075]
 one_shot = true
