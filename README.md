@@ -16,3 +16,12 @@ Trong project này tôi học và sử dụng:
 
 ## Giới thiệu về trò chơi
 Đây là một trò chơi Jump endless với mục tiêu của người chơi là cố gắng nhảy lên càng cao càng tốt, không có giới hạn về độ cao, cố gắng làm sao để không bị té rớt xuống. Với mỗi bước lần nhảy trên một bậc thềm Pogo sẽ khiến lực nhảy nhân vật cao hơn, từ đó khiến nhân vật nhảy cao hơn. 1 ground sẽ được sinh ra khi nhân vật chạm được Pogo hoặc land kế tiếp.
+
+## Điều khiển
+Sử dụng các phím:
+- W để di chuyển về phía màn hình (phía trước)
+- S để di chuyển về sau
+- A để di chuyển sang trái
+- D để di chuyển sang phải
+
+Khi game bị over bạn sử dụng phím R để restart lại game
